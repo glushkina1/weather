@@ -12,11 +12,14 @@ export const getWeather = (city, onSuccess = () => {}, onError = () => {}) => {
       }
 
       const resData = await res.json();
-      console.log(resData)
+      console.log('from action:',resData)
       dispatch({
         type: GET_WEATHER,
         payload: resData,
-      })
+      });
+
+      console.log('SUCCESS');
+      console.log(resData);
       onSuccess();
     }
     catch (err) {
