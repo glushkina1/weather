@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { SafeAreaView, StyleSheet, Text, View, Alert, TouchableWithoutFeedback, Keyboard } from "react-native";
+import { SafeAreaView, StyleSheet, View, Alert, TouchableWithoutFeedback, Keyboard } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 import {getWeather} from "./store/actions/weatherAction";
 import Form from "./components/Form";
@@ -16,6 +16,7 @@ const App = () => {
     if (search === '') {
       return Alert.alert('Validation', 'City name is required!', [{text:'OK'}]);
     }
+
     setLoading(true);
     dispatch(getWeather(search, () => setLoading(false), () => setLoading(false)));
     setSearch('');

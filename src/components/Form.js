@@ -1,6 +1,6 @@
 import React from "react";
-import { View, StyleSheet, TextInput, Button, TouchableOpacity } from "react-native";
-import Icon from 'react-native-ionicons'
+import { View, StyleSheet, TextInput} from "react-native";
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const Form = ({ search, onSetSearch, onSubmit }) => {
   return (
@@ -10,7 +10,7 @@ const Form = ({ search, onSetSearch, onSubmit }) => {
                  value={search}
                  onChangeText={(val) => onSetSearch(val)} />
 
-      <Icon name='rocket' size={30} color="black" onPress={onSubmit} />
+      <Icon name="search-outline" size={30} color="grey" onPress={onSubmit} style={styles.icon}/>
     </View>
   );
 
@@ -19,8 +19,10 @@ const styles = StyleSheet.create({
   container: {
     padding: 20,
     backgroundColor: "#f1f1f1",
+    flexDirection:'row',
   },
   input: {
+    width:'88%',
     borderWidth:1,
     borderColor: '#dbdbdb',
     borderRadius:4,
@@ -30,6 +32,10 @@ const styles = StyleSheet.create({
     paddingHorizontal:10,
     fontSize: 16,
     marginTop:10,
+  },
+  icon:{
+    marginTop:10,
+    marginLeft: 15,
   },
 });
 

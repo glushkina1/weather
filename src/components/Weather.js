@@ -5,7 +5,7 @@ import WeatherData from "./WeatherData";
 const Weather = ({ loading, data, error }) => {
   if (error) {
     return <View style={styles.container}>
-      <Text style={styles.error}>{error}</Text>
+      <Text style={styles.error}>There is no such city. Please try again</Text>
     </View>;
   }
 
@@ -21,12 +21,11 @@ const Weather = ({ loading, data, error }) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     paddingVertical: 20,
   },
   error: {
-    color: "red",
-    fontSize: 20,
+    color: "#FA8072",
+    fontSize: 15,
     textAlign: "center",
   },
 });
